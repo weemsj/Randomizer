@@ -28,7 +28,7 @@ if __name__ == '__main__':
     write([15]) # user passes a single int (stop)
     time.sleep(3.5)
     read()
-    lis = []
+    lis = []    # clears the pipeline.txt file
     write(lis)
     
     write([10,30]) # user passes two ints (start, stop)
