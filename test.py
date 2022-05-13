@@ -2,6 +2,7 @@ import time
 
 
 def write(lis):
+    ''' formats the values before writing them to pipeline.txt file'''
     with open('pipeline.txt', 'w') as f:
         for i in lis: 
             if i != lis[-1]:  # if the list item is the only item or is the last item dont include a comma at the end.

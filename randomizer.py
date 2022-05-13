@@ -7,9 +7,20 @@ def randomizer():
     
     time.sleep(3)
     
+    '''
+    alternative content options for other uses. 
+    
+    For CS361 microservis created for nathan we will only find random values from zero to 100. 
+    
+    For other use cases outside of CS361 portfolio project, uncomment f= and content = , for futher information on how to use this program see ReadMe
+    
     f = open('pipeline.txt', 'r')
 
     contents = f.read()
+    
+    '''
+    
+    contents = "100"
 
     if not contents:
         return 
@@ -18,7 +29,8 @@ def randomizer():
     if contents.isdigit():
         num = int(contents)
         rand = random.randrange(num)
-
+        time.sleep(1.5)
+        
     else:
         isNum = 0
         # puts contents into a list of strings
@@ -45,7 +57,7 @@ def randomizer():
                 rand = random.randrange(lis[0])
             else:
                 with open('pipeline.txt', 'w') as f:
-                    f.write("Error, invalid integer, randomizer expects (start,stop,step). Start and stop are optional. ")
+                    f.write("Error, invalid integer, randomizer expects (start,stop,step) start value should be less than stop, and step value should be less than stop . Start and step are optional. ")
                     f.close()
                     return
         else:
@@ -58,7 +70,6 @@ def randomizer():
     with open('pipeline.txt', 'w') as f:
         if type(rand) == int:
             rand = str(rand)
-            print(type(rand))
         f.write(rand)
         f.close()
         return
